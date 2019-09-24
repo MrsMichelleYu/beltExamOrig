@@ -1,0 +1,40 @@
+<h5>Edit this pet</h5>
+<div class="container">
+  <div *ngFor="let error of errors" class="error">{{error}}</div>
+  <form (submit)="editPet(updatePet._id)">
+    <div class="form-group">
+      <label for="updatePet.name">Pet Name</label>
+      <input type="text" class="form-control" id="updatePet.name" name="updatePet.name" [(ngModel)]="updatePet.name">
+    </div>
+    <div class="form-group">
+      <label for="updatePet.type">Type</label>
+      <input type="text" class="form-control" id="type" name="updatePet.type" [(ngModel)]="updatePet.type">
+    </div>
+    <div class="form-group">
+      <label for="updatePet.description">Description</label>
+      <input type="text" class="form-control" id="description" name="updatePet.description"
+        [(ngModel)]="updatePet.description">
+    </div>
+    <p>Skills:</p>
+    <div class="form-group row">
+      <label for="updatePet.skill1" class="col-sm-2 col-form-label">Skill 1:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="skills1" name="updatePet.skill1" [(ngModel)]="updatePet.skill1">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="updatePet.skill2" class="col-sm-2 col-form-label">Skill 2:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="skills2" name="updatePet.skill2" [(ngModel)]="updatePet.skill2">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="updatePet.skill3" class="col-sm-2 col-form-label">Skill 3:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="skills3" name="updatePet.skill3" [(ngModel)]="updatePet.skill3">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit pet</button>
+    <button [routerLink]="['/']" class="btn btn-primary">Cancel</button>
+  </form>
+</div>
